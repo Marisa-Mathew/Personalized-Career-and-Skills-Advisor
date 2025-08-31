@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Career Navigation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h2 { color: #333; }
+        ul { list-style-type: disc; margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Your Skill Navigator Results</h1>
+    
+    <h2>Skill Profile</h2>
+    <ul>
+        <li><strong>Hard Skills:</strong> {{ profile.hard|join(', ') }}</li>
+        <li><strong>Soft Skills:</strong> {{ profile.soft|join(', ') }}</li>
+        <li><strong>Interests:</strong> {{ profile.interests }}</li>
+    </ul>
+    
+    <h2>Recommended Career Paths</h2>
+    <ul>
+        {% for rec in recs %}
+            <li>{{ rec }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Learning Suggestions</h2>
+    <ul>
+        {% for sugg in suggs %}
+            <li>{{ sugg }}</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="/">Back to Assessment</a>
+</body>
+</html>
